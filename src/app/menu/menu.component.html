@@ -1,0 +1,25 @@
+<div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xs-1">
+
+
+    <div *ngFor="let products of products; index as i">
+<div class="card" style="width: 18rem;">
+    <img src="{{products.picture}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{products.name}}</h5>
+      <p class="card-text" *ngIf="products.description">{{products.description}}</p>
+      <hr>
+       <h5 class="card-title">{{products.price}} €</h5>
+       <hr>
+      <div style="display: flex; justify-content: start; gap: 20px;"> 
+      <a routerLink="/product/{{i}}" class="btn btn-primary">Details</a>
+
+
+      <button      (click)="addToCart(this.products)"   routerLink="/cart"      class="btn btn-success">Order</button>
+      
+    </div>  
+    </div>
+  </div>
+</div>
+</div>
+
+    
