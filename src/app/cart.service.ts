@@ -32,9 +32,19 @@ export class CartService {
 
   calculateTotal() {
     let total :number = 0;
+    let service = 0;
+    let discount = 0;
+
     for (let val of this.cart) {
       total = total + val.price 
+      service = total * 0.1;
+
     }
-    return total ;
+    if( total >40) {
+      discount = Math.floor((total * 0.15))
+    }
+    return [total,service,discount] ;
+
   }
+  
 }

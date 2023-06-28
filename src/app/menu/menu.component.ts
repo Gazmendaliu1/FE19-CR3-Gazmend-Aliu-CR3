@@ -36,10 +36,13 @@ export class MenuComponent implements OnInit {
   return this.cart;
 }
 
-addToCart (obj: Iproducts) {
-  alert(`ADDED`)
-  this.cart.push(obj);
-}
+// addToCart (obj: Iproducts) {
+//   alert(`ADDED`)
+//   this.cart.push(obj);
+// }
+addToCart (product: Iproducts) {
+  this.CartService.addToCart(product)
+  }
 
 
 ngOnInit(): void {
